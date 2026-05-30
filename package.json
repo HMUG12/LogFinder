@@ -1,0 +1,27 @@
+{
+  "name": "LogFinder",
+  "version": "1.0.0",
+  "description": "Windows日志查找器",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.example.logfinder",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "directories": {
+      "output": "dist"
+    }
+  },
+  "dependencies": {
+    "electron": "^28.0.0",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "electron-builder": "^24.9.1"
+  }
+}

@@ -1,0 +1,29 @@
+# PyInstaller build artifacts
+dist/
+build/
+*.spec
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.Python
+
+# Logs
+*.log
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Virtual environment
+venv/
+env/
+*.egg-info/
