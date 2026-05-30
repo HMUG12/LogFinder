@@ -18,9 +18,8 @@
 - **自定义窗口**：支持窗口拖拽、最小化、关闭操作
 - **窗口大小限制**：最小 800×600，最大 1200×900
 
-## 🖼️ 界面预览
+![Uploading 20260530032518-e79e6903-33afcc2e.png…]()
 
-![界面预览](https://via.placeholder.com/800x600?text=LogFinder+Interface)
 
 ## 🚀 快速开始
 
