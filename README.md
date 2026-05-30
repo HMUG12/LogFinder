@@ -1,6 +1,7 @@
 # 日志查找器 (LogFinder)
 
 一个基于Python的Windows桌面日志查找工具，支持路径搜索、日期过滤、关键词搜索和日志文件提取功能。
+<img width="1254" height="1254" alt="20260530032518-e79e6903-33afcc2e" src="https://github.com/user-attachments/assets/0c60acee-0186-463d-b547-a1fcd714e13a" />
 
 ## 📁 功能特性
 
@@ -19,7 +20,6 @@
 - **窗口大小限制**：最小 800×600，最大 1200×900
 
 
-<img width="1254" height="1254" alt="20260530032518-e79e6903-33afcc2e" src="https://github.com/user-attachments/assets/068f3c93-e7e8-489a-abe9-6beb26fc7291" />
 
 ## 🚀 快速开始
 
