@@ -19,6 +19,7 @@
 - **窗口大小限制**：最小 800×600，最大 1200×900
 
 
+<img width="1254" height="1254" alt="20260530032518-e79e6903-33afcc2e" src="https://github.com/user-attachments/assets/068f3c93-e7e8-489a-abe9-6beb26fc7291" />
 
 ## 🚀 快速开始
 
