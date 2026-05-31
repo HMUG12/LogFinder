@@ -418,7 +418,7 @@ class LogFinderApp:
             browse_btn.pack(side=tk.RIGHT, padx=(8, 0))
     
     def update_steam_path(self):
-        drive = self.drive_var.get()
+        drive = self.drive_var.get().rstrip('/\\')
         steam_path = f'{drive}/SteamLibrary/steamapps/common/n.e.k.o/resources/bin/projectneko_server.exe'
         self.steam_path_label.config(text=f'路径: {steam_path}')
     
