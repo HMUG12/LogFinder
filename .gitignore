@@ -8,22 +8,63 @@ __pycache__/
 *.pyc
 *.pyo
 .Python
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environment
+venv/
+env/
+ENV/
+.env/
+.venv/
 
 # Logs
 *.log
 *.tmp
+logs/
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*.bak
+*.backup
 
 # OS
 .DS_Store
 Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
-# Virtual environment
-venv/
-env/
-*.egg-info/
+# Application settings
+log_finder_settings.json
+last_version.txt
+
+# Antivirus reports
+ANTIVIRUS_GUIDE.md
+
+# Build scripts
+build.bat
+build.sh
+
+# Temporary files
+*.tmp
+*.temp
+*.lock
+
+# Binary files
+*.exe
+*.dll
+*.pyd
+*.so
+*.dylib
+
+# Compressed files
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz

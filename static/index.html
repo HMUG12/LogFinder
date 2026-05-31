@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日志查找器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 自定义标题栏 -->
+    <div class="title-bar">
+        <div class="title-bar-left">
+            <span class="app-icon">📊</span>
+            <span class="app-title">日志查找器</span>
+        </div>
+        <div class="title-bar-right">
+            <button class="window-btn close-btn" onclick="closeWindow()">
+                <span class="btn-icon">×</span>
+            </button>
+            <button class="window-btn minimize-btn" onclick="minimizeWindow()">
+                <span class="btn-icon">−</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 主内容区域 -->
+    <div class="container">
+        <!-- 搜索面板 -->
+        <div class="search-panel">
+            <h2 class="panel-title">搜索设置</h2>
+            
+            <div class="form-group">
+                <label for="searchPath" class="form-label">搜索路径</label>
+                <div class="path-input-group">
+                    <input type="text" id="searchPath" class="form-input" placeholder="请输入要搜索的目录路径...">
+                    <button id="browseBtn" class="btn btn-secondary">浏览</button>
+                </div>
+                <span id="pathStatus" class="status"></span>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="keyword" class="form-label">关键词</label>
+                    <input type="text" id="keyword" class="form-input" placeholder="搜索关键词（可选）">
+                </div>
+                <div class="form-group">
+                    <label for="startDate" class="form-label">开始日期</label>
+                    <input type="date" id="startDate" class="form-input date-input">
+                </div>
+                <div class="form-group">
+                    <label for="endDate" class="form-label">结束日期</label>
+                    <input type="date" id="endDate" class="form-input date-input">
+                </div>
+            </div>
+
+            <button id="searchBtn" class="btn btn-primary">开始搜索</button>
+        </div>
+
+        <!-- 搜索结果 -->
+        <div class="results-panel">
+            <div class="results-header">
+                <h2 class="panel-title">搜索结果</h2>
+                <div class="results-info">
+                    <span id="resultCount" class="result-count">找到 0 个文件</span>
+                    <div class="results-actions">
+                        <button id="selectAllBtn" class="btn btn-sm btn-outline">全选</button>
+                        <button id="downloadSelectedBtn" class="btn btn-sm btn-primary" disabled>下载选中</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="resultsList" class="results-list">
+                <div class="empty-state">
+                    <div class="empty-icon">📋</div>
+                    <p>请设置搜索条件并点击"开始搜索"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 文件内容预览模态框 -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="previewTitle" class="modal-title">文件预览</h3>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="file-info-bar">
+                    <span id="filePath" class="file-path"></span>
+                    <button id="downloadFileBtn" class="btn btn-sm btn-primary">下载此文件</button>
+                </div>
+                <pre id="fileContent" class="file-content"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

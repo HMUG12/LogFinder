@@ -1,97 +1,180 @@
-# 日志查找器 (LogFinder)
+# 日志查找器 (Log Finder)
 
-一个基于Python的Windows桌面日志查找工具，支持路径搜索、日期过滤、关键词搜索和日志文件提取功能。
-<img width="1254" height="1254" alt="20260530032518-e79e6903-33afcc2e" src="https://github.com/user-attachments/assets/0c60acee-0186-463d-b547-a1fcd714e13a" />
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10+-blue.svg" alt="Python Version">
+  <img src="https://img.shields.io/badge/Tkinter-GUI-green.svg" alt="GUI Framework">
+  <img src="https://img.shields.io/badge/Platform-Windows-lightgrey.svg" alt="Platform">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
+</p>
 
-## 📁 功能特性
+一个功能强大的Windows桌面日志查找器，支持路径日志查找、日期过滤搜索、日志文件提取等功能。
 
-### 核心功能
-- **路径日志查找**：支持递归搜索指定目录下的所有 `.log` 文件
-- **日期过滤搜索**：按文件修改时间筛选，支持自定义日期范围
-- **关键词搜索**：在日志内容中搜索指定关键词（不区分大小写）
-- **全局搜索**：当普通搜索无结果时，可扫描所有磁盘驱动器查找日志
-- **日志文件预览**：双击查看日志文件完整内容
-- **文件下载**：支持单个下载或批量打包下载（ZIP格式）
+---
 
-### 便捷特性
-- **默认路径**：自动设置为 `C:\Users\{用户名}\AppData\Local\N.E.K.O\logs`
-- **默认日期**：自动设置为最近两天（今天和昨天）
-- **自定义窗口**：支持窗口拖拽、最小化、关闭操作
-- **窗口大小限制**：最小 800×600，最大 1200×900
+## ✨ 功能特性
 
+### 📂 日志搜索
+- **路径日志查找**：支持自定义搜索路径，默认路径自动检测当前用户的N.E.K.O日志目录
+- **日期过滤**：支持自定义日期范围搜索，默认向前推进1天
+- **关键词搜索**：支持关键词过滤，搜索无结果时提示全局搜索
+- **文件预览**：双击文件预览内容
+- **批量下载**：支持多选文件并打包下载
 
+### 🔧 测试工具
+- **N.E.K.O测试日志收集**：支持启动projectneko_server.exe并收集日志
+- **Steam模式**：自动构建Steam库路径
+- **自定义模式**：手动选择N.E.K.O.exe所在目录
+- **无窗口启动**：后台运行，不显示CMD窗口
+- **实时日志捕获**：实时显示程序输出
+
+### ⚙️ 设置
+- **默认路径配置**：自定义默认搜索路径
+- **日期范围设置**：设置默认搜索天数
+- **编码格式选择**：支持UTF-8、GBK、GB2312、GB18030、ANSI等编码
+- **测试路径配置**：设置Steam盘符和自定义路径
+
+### 📱 用户体验
+- **高级灰加白配色**：现代化UI设计
+- **窗口大小限制**：固定最小窗口尺寸，确保布局完整
+- **自定义窗口控制**：最小化和关闭按钮
+- **首次启动更新日志**：展示版本更新内容
+
+---
 
 ## 🚀 快速开始
 
-### 方式一：直接运行（推荐）
+### 系统要求
+- Windows 10/11 (64位)
+- Python 3.10+ (开发环境)
 
-下载 `LogFinder.exe` 可执行文件，双击运行即可，无需安装Python环境。
+### 下载与运行
 
-### 方式二：源码运行
+#### 方法一：下载预编译版本
+1. 前往 [Releases](https://github.com/yourusername/log-finder/releases) 页面
+2. 下载最新版本的 `LogFinder.zip`
+3. 解压到任意目录
+4. 运行 `LogFinder.exe`
 
+#### 方法二：从源码运行
 ```bash
 # 克隆仓库
-git clone <repository-url>
-cd 路径查找
+git clone https://github.com/yourusername/log-finder.git
+cd log-finder
 
-# 运行应用
+# 安装依赖
+pip install -r requirements.txt
+
+# 运行程序
 python log_finder.py
 ```
 
-### 方式三：重新打包
-
+### 打包成EXE
 ```bash
-# 安装依赖
-pip install pyinstaller
+# 使用PyInstaller打包
+pyinstaller --clean --noupx --windowed --onedir --name=LogFinder --icon="20260530032518-e79e6903-33afcc2e_256x256.ico" log_finder.py
 
-# 打包（带图标）
-pyinstaller --onefile --windowed --name LogFinder --icon=20260530032518-e79e6903-33afcc2e_256x256.ico log_finder.py
+# 或使用打包脚本
+build.bat
 ```
+
+---
 
 ## 📖 使用说明
 
-1. **设置搜索路径**：默认路径为 `C:\Users\{用户名}\AppData\Local\N.E.K.O\logs`，可通过"浏览"按钮更改
-2. **设置关键词**（可选）：在搜索框中输入要查找的关键词
-3. **设置日期范围**（可选）：默认最近两天，可自定义开始和结束日期
-4. **开始搜索**：点击"开始搜索"按钮查找符合条件的日志文件
-5. **预览日志**：双击搜索结果查看日志内容
-6. **下载文件**：勾选文件后点击"下载选中"，支持单个或批量下载
+### 日志搜索页面
+1. 在路径输入框中输入日志目录路径
+2. 设置日期范围（可选，默认为最近1天）
+3. 输入关键词进行过滤（可选）
+4. 点击"搜索"按钮查找日志文件
+5. 双击文件预览内容
+6. 选择文件后点击"下载选中文件"批量下载
 
-### 全局搜索功能
+### 测试页面
+1. 选择运行模式：
+   - **Steam模式**：选择Steam盘符，自动构建路径
+   - **自定义模式**：选择N.E.K.O.exe所在目录
+2. 点击"启动并收集日志"按钮
+3. 查看实时日志输出
+4. 点击"停止"按钮停止程序
+5. 点击"下载日志文件"保存日志
 
-当普通搜索无结果且输入了关键词时，可点击"试试关键词全局搜索功能"按钮，程序会扫描所有可用磁盘驱动器查找包含关键词的日志文件。
+### 设置页面
+1. 设置默认日志路径
+2. 设置默认日期范围
+3. 选择日志文件编码格式
+4. 设置默认测试路径
+5. 点击"保存设置"按钮
 
-## 🛠️ 技术栈
-
-- **语言**: Python 3.x
-- **GUI框架**: Tkinter（内置）
-- **打包工具**: PyInstaller
-- **图标**: 自定义 ICO 图标
+---
 
 ## 📁 项目结构
 
 ```
-路径查找/
-├── dist/                    # 打包输出目录
-│   └── LogFinder.exe        # 可执行文件
-├── static/                  # Web前端文件（备用）
-├── log_finder.py            # 主应用源码
-├── app.py                   # Flask后端服务（备用）
-├── package.json             # Electron配置（备用）
-├── requirements.txt         # Python依赖
-├── LogFinder.spec           # PyInstaller配置
-└── README.md                # 项目说明文档
+log-finder/
+├── log_finder.py          # 主程序入口
+├── LogFinder.spec         # PyInstaller打包配置
+├── build.bat              # 一键打包脚本
+├── ANTIVIRUS_GUIDE.md     # 防杀软误报指南
+├── 20260530032518-e79e6903-33afcc2e_256x256.ico  # 应用图标
+├── .gitignore             # Git忽略文件
+├── README.md              # 项目说明文档
+└── dist/                  # 打包输出目录
+    └── LogFinder/         # onedir模式产物
 ```
 
-## 📝 注意事项
+---
 
-1. 全局搜索功能可能需要较长时间，取决于磁盘大小和文件数量
-2. 建议在搜索前设置合理的日期范围以提高搜索效率
-3. 打包后的EXE文件约15MB，包含所有依赖，可独立运行
+## 🔧 配置说明
+
+### 默认路径
+程序启动时会自动检测以下路径：
+- `C:\Users\{用户名}\AppData\Local\N.E.K.O\logs`
+
+### 设置文件
+设置保存在程序运行目录的 `log_finder_settings.json` 文件中：
+```json
+{
+  "default_path": "C:\\Users\\用户名\\AppData\\Local\\N.E.K.O\\logs",
+  "date_range": "7",
+  "encoding": "utf-8-sig",
+  "steam_drive": "D:",
+  "custom_path": ""
+}
+```
+
+---
+
+## 🛡️ 安全提示
+
+### 杀软误报处理
+由于PyInstaller打包的特性，部分杀毒软件可能会误报。如遇到误报：
+1. 将程序添加到杀软信任列表
+2. 使用代码签名证书（推荐）
+3. 参考 `ANTIVIRUS_GUIDE.md` 向杀软厂商提交误报
+
+---
+
+## 📝 更新日志
+
+### v1.0.0
+- ✨ 新增"测试"页面，支持N.E.K.O测试日志收集
+- ✨ 支持Steam模式和自定义模式启动项目
+- ✨ 设置页面新增编码格式选择
+- ✨ 设置页面新增默认测试路径配置
+- ✨ 新增首次启动更新日志弹窗
+- 🎨 优化UI布局，确保最小窗口尺寸下完整显示
+- 🔒 优化打包配置，减少杀软误报
+- 🐛 修复双击预览后无法再次打开问题
+- 🐛 修复选择下载文件数量不匹配问题
+- 🐛 修复UI拖拽重叠问题
+
+---
 
 ## 📄 许可证
 
-MIT License
+MIT License - 详见 [LICENSE](LICENSE) 文件
+
+---
 
 ## 🤝 贡献
 
@@ -99,4 +182,4 @@ MIT License
 
 ---
 
-*Made with ❤️ for Windows Log Management*
+**如果这个项目对你有帮助，请给个 ⭐️！**

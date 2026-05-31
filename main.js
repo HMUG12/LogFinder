@@ -8,14 +8,13 @@ let expressServer;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
-        width: 1024,
-        height: 768,
-        minWidth: 800,
-        minHeight: 600,
-        maxWidth: 1200,
-        maxHeight: 900,
+        width: 800,
+        height: 600,
+        resizable: false,
         frame: false,
         titleBarStyle: 'hidden',
+        titleBarOverlay: false,
+        autoHideMenuBar: true,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
