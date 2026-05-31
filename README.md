@@ -1,4 +1,5 @@
 # 日志查找器 (Log Finder)
+<img width="1672" height="941" alt="20260530131919-31b8ec78-0e48dc23" src="https://github.com/user-attachments/assets/c9d3e6c4-d16d-44da-8c37-a00ea09a1406" />
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10+-blue.svg" alt="Python Version">
@@ -7,7 +8,8 @@
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
 </p>
 
-一个功能强大的Windows桌面日志查找器，支持路径日志查找、日期过滤搜索、日志文件提取等功能。
+为Project neko日志查找而开发的一个功能强大的Windows桌面日志查找器，支持路径日志查找、日期过滤搜索、日志文件提取等功能。
+<img width="1254" height="1254" alt="20260530032518-e79e6903-33afcc2e" src="https://github.com/user-attachments/assets/f63965f9-2601-4233-b098-0340255714d2" />
 
 ---
 
